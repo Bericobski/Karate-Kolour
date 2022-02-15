@@ -9,11 +9,7 @@ public class player_char : MonoBehaviour
     public SpriteRenderer cube;
     public int score;
 
-    void Start()
-    {
-        
-    }
-
+    void Start() { }
     // Update is called once per frame
     void Update()
     {
@@ -26,44 +22,40 @@ public class player_char : MonoBehaviour
                 if (rayHit.transform.tag == "posture_shift")
                 {
                     posture_ID = rayHit.transform.GetComponent<Button>().button_ID;
-                    
-
                 }
             }
         }
-
-        
-
         posture_check();
-        inputsjaja();
+        inputButton();
     }
 
     public void posture_check()
     {
-        if (posture_ID == 0)
+        switch (posture_ID)
         {
-            cube.color = new Color(1, 0.5f, 0);
-        }
-        else if (posture_ID == 1)
-        {
-            cube.color = new Color(0, 1, 0);
-        }
-        else if (posture_ID == 2)
-        {
-            cube.color = new Color(1, 0, 1);
-        }
-        else if (posture_ID == 3)
-        {
-            cube.color = new Color(1, 1, 0);
-        }
+            case 0:
+                cube.color = new Color(1, 0.5f, 0);
+                break;
+            case 1:
+                cube.color = new Color(0, 1, 0);
+                break;
+            case 2:
+                cube.color = new Color(1, 0, 1);
+                break;
+            case 3:
+                cube.color = new Color(1, 1, 0);
+                break;
+            default:
+                break;
+        }//Modifque esta parte para dejar de lado el uso de tantos condicionales.
     }
 
-    public void ded()
+    public void dead()
     {
         SceneManager.LoadScene("game_over");
     }
 
-    public void inputsjaja()
+    public void inputButton()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
