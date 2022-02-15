@@ -10,6 +10,7 @@ public class Enemies : MonoBehaviour
     public float speed = 3f;
     public int enemy_ID;
     public SpriteRenderer cube;
+    
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Enemies : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     karateka.score = karateka.score + 1;
+                    karateka.attacking();
                 }
                 else if (karateka.posture_ID != enemy_ID) { karateka.dead();  }
             }
@@ -65,7 +67,7 @@ public class Enemies : MonoBehaviour
         }
     }
 
-    /*public void SetSpedd() 
+    public void SetSpedd() 
     {
         player_char karateka = gameObject.GetComponent<player_char>();
         if (karateka != null)
@@ -75,5 +77,7 @@ public class Enemies : MonoBehaviour
         }
         else { Debug.Log("No funca");  }
     //El problema seria que no reonoce al karateka por lo tanto lo toma como un nulo.
-    }*/
+    }
+
+
 }

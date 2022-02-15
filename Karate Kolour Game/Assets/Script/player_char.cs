@@ -8,6 +8,7 @@ public class player_char : MonoBehaviour
     public int posture_ID;
     public SpriteRenderer cube;
     public int score;
+    public Animator anims;
 
     void Start() { }
     // Update is called once per frame
@@ -60,18 +61,42 @@ public class player_char : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             posture_ID = 0;
+            anims.SetTrigger("idle_tiger");
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
             posture_ID = 1;
+            anims.SetTrigger("idle_crane");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             posture_ID = 2;
+            anims.SetTrigger("idle_snake");
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
             posture_ID = 3;
+        }
+    }
+
+    public void attacking()
+    {
+        if (posture_ID == 0)
+        {
+            anims.SetTrigger("tiger_attack");
+            anims.SetTrigger("idle_tiger");
+        }
+
+        if (posture_ID == 1)
+        {
+            anims.SetTrigger("crane_attack");
+            anims.SetTrigger("idle_crane");
+        }
+
+        if (posture_ID == 2)
+        {
+            anims.SetTrigger("snake_attack");
+            anims.SetTrigger("idle_snake");
         }
     }
 
