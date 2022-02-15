@@ -61,17 +61,17 @@ public class player_char : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             posture_ID = 0;
-            anims.SetTrigger("idle_tiger");
+            anims.Play("idle_tiger");
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
             posture_ID = 1;
-            anims.SetTrigger("idle_crane");
+            anims.Play("idle_crane");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             posture_ID = 2;
-            anims.SetTrigger("idle_snake");
+            anims.Play("idle_snake");
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -83,20 +83,17 @@ public class player_char : MonoBehaviour
     {
         if (posture_ID == 0)
         {
-            anims.SetTrigger("tiger_attack");
-            anims.SetTrigger("idle_tiger");
+            anims.Play("Tiger_attack");
         }
 
         if (posture_ID == 1)
         {
-            anims.SetTrigger("crane_attack");
-            anims.SetTrigger("idle_crane");
+            anims.Play("crane_attack");
         }
 
         if (posture_ID == 2)
         {
-            anims.SetTrigger("snake_attack");
-            anims.SetTrigger("idle_snake");
+            anims.Play("Snake_attack");
         }
     }
 
