@@ -11,6 +11,7 @@ public class Spawn_manager : MonoBehaviour
     public int[] cantEnemies;
     public int enemycounter;
     public int waiTime = 5;
+    public Transform[] spawners;
 
     public enum actualEnemiesState
     {
@@ -47,7 +48,7 @@ public class Spawn_manager : MonoBehaviour
         {
             for (int i = 0; i < cantEnemies[(int)state]; i++)
             {
-                Instantiate(Enemy_Prefab, new Vector3(Random.Range(10f, -10f), Random.Range(8f, 15f), 0), Quaternion.identity);
+                Instantiate(Enemy_Prefab, spawners[Random.Range(0, spawners.Length)].position, Quaternion.identity);
                 enemycounter++;
                 if (points.score >= 5 && points.score <= 10) { state = actualEnemiesState.normal; }
                 else if (points.score > 10) { state = actualEnemiesState.hard; }

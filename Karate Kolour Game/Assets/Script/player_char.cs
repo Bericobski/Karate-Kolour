@@ -26,11 +26,11 @@ public class player_char : MonoBehaviour
                 }
             }
         }
-        posture_check();
+        //posture_check();
         inputButton();
     }
 
-    public void posture_check()
+    /*public void posture_check()
     {
         switch (posture_ID)
         {
@@ -49,7 +49,7 @@ public class player_char : MonoBehaviour
             default:
                 break;
         }//Modifque esta parte para dejar de lado el uso de tantos condicionales.
-    }
+    }*/
 
     public void dead()
     {
@@ -76,11 +76,22 @@ public class player_char : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             posture_ID = 3;
+            anims.Play("idle_dragon");
         }
     }
 
-    public void attacking()
+    public void attacking(float pos_x)
     {
+        if (pos_x < transform.position.x)
+        {
+            cube.flipX = true;
+        }
+        else
+        {
+            cube.flipX = false;
+        }
+
+
         if (posture_ID == 0)
         {
             anims.Play("Tiger_attack");
@@ -95,6 +106,11 @@ public class player_char : MonoBehaviour
         {
             anims.Play("Snake_attack");
         }
-    }
 
+        if (posture_ID == 3)
+        {
+            anims.Play("dragon_attack");
+        }
+
+    }
 }

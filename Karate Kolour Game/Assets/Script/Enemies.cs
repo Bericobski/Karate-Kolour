@@ -39,7 +39,7 @@ public class Enemies : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     karateka.score = karateka.score + 1;
-                    karateka.attacking();
+                    karateka.attacking(transform.position.x);
                 }
                 else if (karateka.posture_ID != enemy_ID) { karateka.dead();  }
             }
@@ -78,6 +78,5 @@ public class Enemies : MonoBehaviour
         else { Debug.Log("No funca");  }
     //El problema seria que no reonoce al karateka por lo tanto lo toma como un nulo.
     }
-
 
 }
