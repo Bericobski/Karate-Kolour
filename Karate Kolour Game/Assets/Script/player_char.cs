@@ -23,6 +23,7 @@ public class player_char : MonoBehaviour
                 if (rayHit.transform.tag == "posture_shift")
                 {
                     posture_ID = rayHit.transform.GetComponent<Button>().button_ID;
+                    play_idle();
                 }
             }
         }
@@ -111,6 +112,28 @@ public class player_char : MonoBehaviour
         {
             anims.Play("dragon_attack");
         }
+    }
 
+    public void play_idle()
+    {
+        if (posture_ID == 0)
+        {
+            anims.Play("idle_tiger");
+        }
+
+        if (posture_ID == 1)
+        {
+            anims.Play("idle_crane");
+        }
+
+        if (posture_ID == 2)
+        {
+            anims.Play("idle_snake");
+        }
+
+        if (posture_ID == 3)
+        {
+            anims.Play("idle_dragon");
+        }
     }
 }
