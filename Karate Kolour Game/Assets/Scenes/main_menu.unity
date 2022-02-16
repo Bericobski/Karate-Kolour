@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Color Fighting Bash
+  m_text: Karate Kolour
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 08b8122ae0e92424cbdf708245aa5158, type: 2}
   m_sharedMaterial: {fileID: -3881119160747080694, guid: 08b8122ae0e92424cbdf708245aa5158, type: 2}
