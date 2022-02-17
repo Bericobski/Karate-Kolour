@@ -119,7 +119,7 @@ public class Enemies : MonoBehaviour
     {
         if (transform.position.x < 0f)
         {
-            if (enemy_ID == 3 || enemy_ID == 4)
+            if (enemy_ID == 3 || enemy_ID == 4 || enemy_ID == 0)
             {
                 cube.flipX = true;
             }
@@ -131,7 +131,7 @@ public class Enemies : MonoBehaviour
         }
         if (transform.position.x > 0f)
         {
-            if (enemy_ID == 1 || enemy_ID == 2)
+            if (enemy_ID == 2 || enemy_ID == 1)
             {
                 cube.flipX = true;
             }
