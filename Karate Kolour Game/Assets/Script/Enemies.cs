@@ -21,11 +21,12 @@ public class Enemies : MonoBehaviour
         enemy_ID = Random.Range(0, 4);
         speed = Random.Range(3f, 6f);
         player = GameObject.FindGameObjectWithTag("player");
-        ninja_anim = Random.Range(0, 1);
-        knife_anim = Random.Range(2, 3);
-        beast_anim = Random.Range(4, 5);
-        dragon_anim = Random.Range(6, 7);
+        ninja_anim = Random.Range(0, 2);
+        knife_anim = Random.Range(2, 4);
+        beast_anim = Random.Range(4, 6);
+        dragon_anim = Random.Range(6, 8);
         anim_check();
+        x_correct();
     }
 
     void Update()
@@ -110,8 +111,36 @@ public class Enemies : MonoBehaviour
         if (enemy_ID == 3)
         {
             if (dragon_anim == 6) { anim.Play("fantasma"); }
-            if (dragon_anim == 5) { anim.Play("fireball"); }
+            if (dragon_anim == 7) { anim.Play("fireball"); }
         }        
+    }
+
+    public void x_correct()
+    {
+        if (transform.position.x < 0f)
+        {
+            if (enemy_ID == 3 || enemy_ID == 4)
+            {
+                cube.flipX = true;
+            }
+            
+            else
+            { 
+                cube.flipX = false;
+            }
+        }
+        if (transform.position.x > 0f)
+        {
+            if (enemy_ID == 1 || enemy_ID == 2)
+            {
+                cube.flipX = true;
+            }
+
+            else
+            {
+                cube.flipX = false;
+            }
+        }
     }
 
 }
