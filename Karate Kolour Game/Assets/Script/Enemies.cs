@@ -15,6 +15,7 @@ public class Enemies : MonoBehaviour
     public int knife_anim;
     public int beast_anim;
     public int dragon_anim;
+    public GameObject expuroshon;
 
     void Start()
     {
@@ -48,7 +49,9 @@ public class Enemies : MonoBehaviour
             {
                 if (karateka.posture_ID == enemy_ID)
                 {
+                    GameObject go = Instantiate(expuroshon, transform.position, Quaternion.identity);
                     Destroy(this.gameObject);
+                    Destroy(go, 1f);
                     karateka.score = karateka.score + 1;
                     karateka.attacking(transform.position.x);
                 }
@@ -119,7 +122,7 @@ public class Enemies : MonoBehaviour
     {
         if (transform.position.x < 0f)
         {
-            if (enemy_ID == 3 || enemy_ID == 4 || enemy_ID == 0)
+            if (enemy_ID == 3 || enemy_ID == 4 || enemy_ID == 0 || enemy_ID == 1)
             {
                 cube.flipX = true;
             }
@@ -131,7 +134,7 @@ public class Enemies : MonoBehaviour
         }
         if (transform.position.x > 0f)
         {
-            if (enemy_ID == 2 || enemy_ID == 1)
+            if (enemy_ID == 2)
             {
                 cube.flipX = true;
             }

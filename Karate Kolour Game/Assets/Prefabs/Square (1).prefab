@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1075287, y: 1.1075287}
   m_EdgeRadius: 0
 --- !u!114 &753475312
 MonoBehaviour:
@@ -134,6 +134,7 @@ MonoBehaviour:
   knife_anim: 0
   beast_anim: 0
   dragon_anim: 0
+  expuroshon: {fileID: 4887049947360238693, guid: 38b0ab6d30478954dae349247bf4f647, type: 3}
 --- !u!50 &-8793367897268214995
 Rigidbody2D:
   serializedVersion: 4
