@@ -31,27 +31,6 @@ public class player_char : MonoBehaviour
         inputButton();
     }
 
-    /*public void posture_check()
-    {
-        switch (posture_ID)
-        {
-            case 0:
-                cube.color = new Color(1, 0.5f, 0);
-                break;
-            case 1:
-                cube.color = new Color(0, 1, 0);
-                break;
-            case 2:
-                cube.color = new Color(1, 0, 1);
-                break;
-            case 3:
-                cube.color = new Color(1, 1, 0);
-                break;
-            default:
-                break;
-        }//Modifque esta parte para dejar de lado el uso de tantos condicionales.
-    }*/
-
     public void dead()
     {
         SceneManager.LoadScene("game_over");

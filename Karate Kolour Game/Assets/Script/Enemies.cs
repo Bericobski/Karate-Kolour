@@ -16,6 +16,7 @@ public class Enemies : MonoBehaviour
     public int beast_anim;
     public int dragon_anim;
     public GameObject expuroshon;
+    public BoxCollider2D col;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Enemies : MonoBehaviour
         dragon_anim = Random.Range(6, 8);
         anim_check();
         x_correct();
+        col_adjust();
     }
 
     void Update()
@@ -59,27 +61,6 @@ public class Enemies : MonoBehaviour
             }
         }
     }
-
-    /*public void posture_check()
-    {
-        switch (enemy_ID)
-        {
-            case 0:
-                cube.color = new Color(1, 0.5f, 0);
-                break;
-            case 1:
-                cube.color = new Color(0, 1, 0);
-                break;
-            case 2:
-                cube.color = new Color(1, 0, 1);
-                break;
-            case 3:
-                cube.color = new Color(1, 1, 0);
-                break;
-            default:
-                break;
-        }
-    }*/
 
     public void SetSpedd() 
     {
@@ -143,6 +124,34 @@ public class Enemies : MonoBehaviour
             {
                 cube.flipX = false;
             }
+        }
+    }
+
+    public void col_adjust()
+    {
+        if (col != null)
+        {
+            if (enemy_ID == 3 && dragon_anim == 6)
+            {
+                col.size = new Vector3(4f, 3.1f);
+            }
+            if (enemy_ID == 1 && knife_anim == 3)
+            {
+                col.size = new Vector3(3.7f, 1f);
+            }
+            if (enemy_ID == 0 && ninja_anim == 1)
+            {
+                col.size = new Vector3(2.8f, 3f);
+            }
+            if (enemy_ID == 3 && dragon_anim == 7)
+            {
+                col.size = new Vector3(2.5f, 3.1f);
+            }
+            if (enemy_ID == 0 && ninja_anim == 0)
+            {
+                col.size = new Vector3(2.8f, 1.8f);
+            }
+
         }
     }
 

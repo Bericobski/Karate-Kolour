@@ -135,6 +135,7 @@ MonoBehaviour:
   beast_anim: 0
   dragon_anim: 0
   expuroshon: {fileID: 4887049947360238693, guid: 38b0ab6d30478954dae349247bf4f647, type: 3}
+  col: {fileID: 753475313}
 --- !u!50 &-8793367897268214995
 Rigidbody2D:
   serializedVersion: 4
