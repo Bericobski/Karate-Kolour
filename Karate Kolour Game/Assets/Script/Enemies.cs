@@ -59,7 +59,7 @@ public class Enemies : MonoBehaviour
                 else if (karateka.posture_ID != enemy_ID) { karateka.dead(); }
             }
         }
-        else {  }
+        else { Debug.Log("the player was not detected"); }
     }
 
     public void SetSpedd(GameObject other) 
@@ -74,7 +74,7 @@ public class Enemies : MonoBehaviour
             else if (karateka.score > 25 && karateka.score <= 30) { speed = 13f;  }
             else if (karateka.score > 30 && karateka.score <= 35) { speed = 15f; }
         }
-        else { Debug.Log("No funca");  }
+        else { Debug.Log("player is null");  }
     }
 
 
