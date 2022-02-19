@@ -55,11 +55,7 @@ public class Spawn_manager : MonoBehaviour
                 WaitTime(state);
                 yield return new WaitForSeconds(waiTime);
             }
+            
         }
     }
-
-
-
-
-
 }

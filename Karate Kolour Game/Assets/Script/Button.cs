@@ -8,36 +8,26 @@ public class Button : MonoBehaviour
     public GameObject player;
     public Animator anims;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
-
-
-
+    void Start() { }
+    void Update() { }
     private void OnMouseDown()
     {
-        if (button_ID == 0)
+        switch (button_ID)
         {
-            anims.Play("boton_tigre");
-        }
-        if (button_ID == 1)
-        {
-            anims.Play("boton_gruya");
-        }
-        if (button_ID == 2)
-        {
-            anims.Play("boton_snake");
-        }
-        if (button_ID == 3)
-        {
-            anims.Play("boton_dragon");
+            case 0:
+                anims.Play("boton_tigre");
+                break;
+            case 1:
+                anims.Play("boton_gruya");
+                break;
+            case 2:
+                anims.Play("boton_snake");
+                break;
+            case 3:
+                anims.Play("boton_dragon");
+                break;
+            default:
+                break;
         }
     }
 

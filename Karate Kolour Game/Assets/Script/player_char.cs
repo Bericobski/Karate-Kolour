@@ -11,7 +11,7 @@ public class player_char : MonoBehaviour
     public Animator anims;
 
     void Start() { }
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -27,7 +27,6 @@ public class player_char : MonoBehaviour
                 }
             }
         }
-        //posture_check();
         inputButton();
     }
 
@@ -43,17 +42,17 @@ public class player_char : MonoBehaviour
             posture_ID = 0;
             anims.Play("idle_tiger");
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W))
         {
             posture_ID = 1;
             anims.Play("idle_crane");
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             posture_ID = 2;
             anims.Play("idle_snake");
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             posture_ID = 3;
             anims.Play("idle_dragon");
@@ -62,57 +61,49 @@ public class player_char : MonoBehaviour
 
     public void attacking(float pos_x)
     {
-        if (pos_x < transform.position.x)
-        {
-            cube.flipX = true;
-        }
-        else
-        {
-            cube.flipX = false;
-        }
-
-
-        if (posture_ID == 0)
-        {
-            anims.Play("Tiger_attack");
-        }
-
-        if (posture_ID == 1)
-        {
-            anims.Play("crane_attack");
-        }
-
-        if (posture_ID == 2)
-        {
-            anims.Play("Snake_attack");
-        }
-
-        if (posture_ID == 3)
-        {
-            anims.Play("dragon_attack");
-        }
+        if (pos_x < transform.position.x) { cube.flipX = true; }
+        else { cube.flipX = false; }
+        Posture_Attack();
     }
 
     public void play_idle()
     {
-        if (posture_ID == 0)
+        switch (posture_ID)
         {
-            anims.Play("idle_tiger");
+            case 0:
+                anims.Play("idle_tiger");
+                break;
+            case 1:
+                anims.Play("idle_crane");
+                break;
+            case 2:
+                anims.Play("idle_snake");
+                break;
+            case 3:
+                anims.Play("idle_dragon");
+                break;
+            default:
+                break;
         }
-
-        if (posture_ID == 1)
+    }
+    public void Posture_Attack()
+    {
+        switch (posture_ID)
         {
-            anims.Play("idle_crane");
-        }
-
-        if (posture_ID == 2)
-        {
-            anims.Play("idle_snake");
-        }
-
-        if (posture_ID == 3)
-        {
-            anims.Play("idle_dragon");
+            case 0:
+                anims.Play("Tiger_attack");
+                break;
+            case 1:
+                anims.Play("crane_attack");
+                break;
+            case 2:
+                anims.Play("Snake_attack");
+                break;
+            case 3:
+                anims.Play("dragon_attack");
+                break;
+            default:
+                break;
         }
     }
 }
