@@ -227,7 +227,6 @@ MonoBehaviour:
   waiTime: 5
   spawners:
   - {fileID: 50434466}
-  - {fileID: 1785896404}
   - {fileID: 1769899159}
   - {fileID: 1733229175}
   - {fileID: 1997453859}
