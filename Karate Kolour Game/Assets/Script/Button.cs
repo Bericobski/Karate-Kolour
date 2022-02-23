@@ -7,6 +7,7 @@ public class Button : MonoBehaviour
     public int button_ID;
     public GameObject player;
     public Animator anims;
+    public Sprite[] icono;
 
     void Start() { }
     void Update() { }
