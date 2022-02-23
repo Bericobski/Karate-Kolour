@@ -8,6 +8,7 @@ public class Enemies : MonoBehaviour
     private GameObject player;
     public Vector2 playerpos;
     public float speed;
+    private bool speedBool = true;
     public int enemy_ID;
     public SpriteRenderer cube;
     public Animator anim;
@@ -22,7 +23,6 @@ public class Enemies : MonoBehaviour
     {
         enemy_ID = Random.Range(0, 4);
         player = GameObject.FindGameObjectWithTag("player");
-        speed = 3f;
         ninja_anim = Random.Range(0, 2);
         knife_anim = Random.Range(2, 4);
         beast_anim = Random.Range(4, 6);
@@ -41,7 +41,6 @@ public class Enemies : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("Deflected by" + other.name);
         Debug.Log("Speed: " + speed);
         if (other.tag == "player")
         {
@@ -65,14 +64,19 @@ public class Enemies : MonoBehaviour
     public void SetSpedd(GameObject other) 
     {
         player_char karateka = other.GetComponent<player_char>();
+
+
         if (karateka != null)
         {
-            if (karateka.score >= 5 && karateka.score <= 10) { speed = 5f; }
-            else if (karateka.score > 10 && karateka.score <= 15) { speed = 7f; }
-            else if (karateka.score > 15 && karateka.score <= 20) { speed = 9f; }
-            else if (karateka.score > 20 && karateka.score <= 25) { speed = 11f; }
-            else if (karateka.score > 25 && karateka.score <= 30) { speed = 13f;  }
-            else if (karateka.score > 30 && karateka.score <= 35) { speed = 15f; }
+            if (speedBool)
+            {
+                if (karateka.score < 5) { speed = 3f; }
+                else if (karateka.score >= 5 && karateka.score <= 10) { speed = 5f; }
+                else if (karateka.score > 10 && karateka.score <= 15) { speed = 7f; }
+                else if (karateka.score > 15 && karateka.score <= 20) { speed = 9f; }
+                else if (karateka.score > 20) { speedBool = false; }
+            }
+            else { speed = 11f; }
         }
         else { Debug.Log("player is null");  }
     }
