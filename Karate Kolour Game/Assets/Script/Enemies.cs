@@ -18,6 +18,16 @@ public class Enemies : MonoBehaviour
     public int dragon_anim;
     public GameObject expuroshon;
     public BoxCollider2D col;
+    public AudioSource soniditos;
+    public AudioClip ninja_grito_2;
+    public AudioClip fantasmas;
+    public AudioClip serpientes;
+    public AudioClip ninja_grito;
+    public AudioClip meteoro;
+    public AudioClip metal;
+    public int garganta_range;
+    public int piña_range;
+
 
     void Start()
     {
@@ -27,6 +37,8 @@ public class Enemies : MonoBehaviour
         knife_anim = Random.Range(2, 4);
         beast_anim = Random.Range(4, 6);
         dragon_anim = Random.Range(6, 8);
+        garganta_range = Random.Range(0, 2);
+        piña_range = Random.Range(0, 3);
         anim_check();
         x_correct();
         col_adjust();
@@ -49,11 +61,14 @@ public class Enemies : MonoBehaviour
             {
                 if (karateka.posture_ID == enemy_ID)
                 {
+                    punch(player);
+                    kiai(player);
                     GameObject go = Instantiate(expuroshon, transform.position, Quaternion.identity);
                     Destroy(this.gameObject);
                     Destroy(go, 1f);
                     karateka.score = karateka.score + 1;
                     karateka.attacking(transform.position.x);
+                    
                 }
                 else if (karateka.posture_ID != enemy_ID) { karateka.dead(); }
             }
@@ -87,20 +102,20 @@ public class Enemies : MonoBehaviour
         switch (enemy_ID)
         {
             case 0:
-                if (ninja_anim == 0) { anim.Play("ninja_patada"); }
-                else { anim.Play("ninja_nunchaku"); }
+                if (ninja_anim == 0) { anim.Play("ninja_patada"); soniditos.clip = ninja_grito; soniditos.Play(); }
+                else { anim.Play("ninja_nunchaku"); soniditos.clip = ninja_grito_2; soniditos.Play(); }
                 break;
             case 1:
-                if (knife_anim == 2) { anim.Play("shuriken"); }
-                else { anim.Play("cuchillo"); }
+                if (knife_anim == 2) { anim.Play("shuriken"); soniditos.clip = metal; soniditos.Play(); }
+                else { anim.Play("cuchillo"); soniditos.clip = metal; soniditos.Play(); }
                 break;
             case 2:
-                if (beast_anim == 4) { anim.Play("snake"); }
-                else { anim.Play("pez_globo"); }
+                if (beast_anim == 4  || beast_anim == 5) { anim.Play("snake"); soniditos.clip = serpientes; soniditos.Play(); }
+                //else { anim.Play("pez_globo"); }
                 break;
             case 3:
-                if (dragon_anim == 6) { anim.Play("fantasma"); }
-                else { anim.Play("fireball"); }
+                if (dragon_anim == 6) { anim.Play("fantasma"); soniditos.clip = fantasmas; soniditos.Play(); }
+                else { anim.Play("fireball"); soniditos.clip = meteoro; soniditos.Play(); }
                 break;
             default:
                 break;
@@ -133,7 +148,48 @@ public class Enemies : MonoBehaviour
         }
         else { Debug.Log("Collider is null"); }
     }
-    
 
+    public void punch(GameObject other)
+    {
+        player_char karateka = other.GetComponent<player_char>();
+        if (karateka != null)
+        {
+            if (piña_range == 0)
+            {
+                karateka.piña_sonido.clip = karateka.piña_1;
+                karateka.piña_sonido.Play();
+            }
+            if (piña_range == 1)
+            {
+                karateka.piña_sonido.clip = karateka.piña_2;
+                karateka.piña_sonido.Play();
+            }
+            if (piña_range == 2)
+            {
+                karateka.piña_sonido.clip = karateka.piña_3;
+                karateka.piña_sonido.Play();
+            }
+        }
+
+    }
+
+    public void kiai(GameObject other)
+    {
+        player_char karateka = other.GetComponent<player_char>();
+        if (karateka != null)
+        {
+            if (piña_range == 0)
+            {
+                karateka.garganta.clip = karateka.grito_1;
+                karateka.garganta.Play();
+            }
+            if (piña_range == 1)
+            {
+                karateka.garganta.clip = karateka.grito_2;
+                karateka.garganta.Play();
+            }
+         }
+
+    }
 
 }

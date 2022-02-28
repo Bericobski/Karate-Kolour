@@ -9,6 +9,18 @@ public class player_char : MonoBehaviour
     public SpriteRenderer cube;
     public int score;
     public Animator anims;
+    public AudioSource soundboard;
+    public AudioClip tiger_roar;
+    public AudioClip crane_shout;
+    public AudioClip snake_hiss;
+    public AudioClip dragon_roar;
+    public AudioSource piña_sonido;
+    public AudioSource garganta;
+    public AudioClip piña_1;
+    public AudioClip piña_2;
+    public AudioClip piña_3;
+    public AudioClip grito_1;
+    public AudioClip grito_2;
 
     void Start() { }
 
@@ -41,21 +53,29 @@ public class player_char : MonoBehaviour
         {
             posture_ID = 0;
             anims.Play("idle_tiger");
+            soundboard.clip = tiger_roar;
+            soundboard.Play();
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             posture_ID = 1;
             anims.Play("idle_crane");
+            soundboard.clip = crane_shout;
+            soundboard.Play();
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             posture_ID = 2;
             anims.Play("idle_snake");
+            soundboard.clip = snake_hiss;
+            soundboard.Play();
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
             posture_ID = 3;
             anims.Play("idle_dragon");
+            soundboard.clip = dragon_roar;
+            soundboard.Play();
         }
     }
 
@@ -72,15 +92,23 @@ public class player_char : MonoBehaviour
         {
             case 0:
                 anims.Play("idle_tiger");
+                soundboard.clip = tiger_roar;
+                soundboard.Play();
                 break;
             case 1:
                 anims.Play("idle_crane");
+                soundboard.clip = crane_shout;
+                soundboard.Play();
                 break;
             case 2:
                 anims.Play("idle_snake");
+                soundboard.clip = snake_hiss;
+                soundboard.Play();
                 break;
             case 3:
                 anims.Play("idle_dragon");
+                soundboard.clip = dragon_roar;
+                soundboard.Play();
                 break;
             default:
                 break;
@@ -106,4 +134,8 @@ public class player_char : MonoBehaviour
                 break;
         }
     }
+
+
+
+
 }
