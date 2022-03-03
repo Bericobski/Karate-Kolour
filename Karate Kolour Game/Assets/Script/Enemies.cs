@@ -67,6 +67,7 @@ public class Enemies : MonoBehaviour
                     Destroy(this.gameObject);
                     Destroy(go, 1f);
                     karateka.score = karateka.score + 1;
+                    game_instance.instance.player_score = karateka.score;
                     karateka.attacking(transform.position.x);
                     
                 }
