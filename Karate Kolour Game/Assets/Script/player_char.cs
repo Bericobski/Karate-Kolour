@@ -22,7 +22,7 @@ public class player_char : MonoBehaviour
     public AudioClip grito_1;
     public AudioClip grito_2;
 
-    void Start() { }
+    void Start() { score = 0; }
 
     void Update()
     {
