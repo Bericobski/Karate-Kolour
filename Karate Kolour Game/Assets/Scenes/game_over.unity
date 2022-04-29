@@ -436,7 +436,6 @@ GameObject:
   - component: {fileID: 235311502}
   - component: {fileID: 235311504}
   - component: {fileID: 235311503}
-  - component: {fileID: 235311505}
   m_Layer: 5
   m_Name: Text Score
   m_TagString: Untagged
@@ -560,19 +559,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235311501}
   m_CullTransparentMesh: 1
---- !u!114 &235311505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235311501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9fc7f2d8b02f5b40bc36b4ef51415b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntaje: {fileID: 235311503}
 --- !u!1 &281195427
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439736989}
   - component: {fileID: 439736988}
+  - component: {fileID: 439736990}
   m_Layer: 0
   m_Name: Scene Logic
   m_TagString: Untagged
@@ -721,6 +708,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439736990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439736987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6567f4eabdf460247b43efb51281d77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreTextField: {fileID: 235311503}
+  highScoreTextField: {fileID: 2068272065}
 --- !u!1001 &501584487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1857,7 +1858,6 @@ GameObject:
   - component: {fileID: 2068272063}
   - component: {fileID: 2068272066}
   - component: {fileID: 2068272065}
-  - component: {fileID: 2068272064}
   m_Layer: 5
   m_Name: Text High Score
   m_TagString: Untagged
@@ -1884,19 +1884,6 @@ RectTransform:
   m_AnchoredPosition: {x: 247, y: 82}
   m_SizeDelta: {x: 389.668, y: 89.514}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2068272064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068272062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511df56bb5617aa4589dbf3768e6d4fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxScore: {fileID: 2068272065}
 --- !u!114 &2068272065
 MonoBehaviour:
   m_ObjectHideFlags: 0
