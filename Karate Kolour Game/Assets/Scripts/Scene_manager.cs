@@ -10,6 +10,10 @@ public class Scene_manager : MonoBehaviour
 
     public void kill_game()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }
