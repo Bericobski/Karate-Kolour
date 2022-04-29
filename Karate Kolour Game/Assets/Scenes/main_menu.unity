@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 285091250}
   - component: {fileID: 285091253}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: How To Play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 360196448}
   - component: {fileID: 360196447}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text Underlay Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 494172216}
   - component: {fileID: 494172219}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Quit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 549433127}
   - component: {fileID: 549433126}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text Kar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 725605455}
   - component: {fileID: 725605454}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Text Kol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,7 +1170,7 @@ GameObject:
   - component: {fileID: 921489299}
   - component: {fileID: 921489298}
   m_Layer: 5
-  m_Name: Play (1)
+  m_Name: Credits Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1403,7 +1403,7 @@ GameObject:
   - component: {fileID: 1110263259}
   - component: {fileID: 1110263258}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text ate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1539,7 +1539,7 @@ GameObject:
   - component: {fileID: 1177143641}
   - component: {fileID: 1177143640}
   m_Layer: 5
-  m_Name: Button
+  m_Name: More Games Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1422358095}
   - component: {fileID: 1422358094}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Text our
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2072,7 +2072,7 @@ GameObject:
   - component: {fileID: 1777731012}
   - component: {fileID: 1777731015}
   m_Layer: 5
-  m_Name: Play
+  m_Name: Play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
