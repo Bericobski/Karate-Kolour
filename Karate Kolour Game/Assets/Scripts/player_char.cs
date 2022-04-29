@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,7 +20,10 @@ public class player_char : MonoBehaviour
     public AudioClip grito_1;
     public AudioClip grito_2;
 
-    void Start() { score = 0; }
+    void Start()
+    {
+        score = 0;
+    }
 
     void Update()
     {
@@ -114,6 +115,7 @@ public class player_char : MonoBehaviour
                 break;
         }
     }
+
     public void Posture_Attack()
     {
         switch (posture_ID)
@@ -134,8 +136,4 @@ public class player_char : MonoBehaviour
                 break;
         }
     }
-
-
-
-
 }
