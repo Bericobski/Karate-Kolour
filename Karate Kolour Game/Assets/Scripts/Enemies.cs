@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemies : MonoBehaviour
@@ -27,7 +25,6 @@ public class Enemies : MonoBehaviour
     public AudioClip metal;
     public int garganta_range;
     public int piña_range;
-
 
     void Start()
     {
@@ -96,7 +93,6 @@ public class Enemies : MonoBehaviour
         }
         else { Debug.Log("player is null");  }
     }
-
 
     public void anim_check()
     {
@@ -192,5 +188,4 @@ public class Enemies : MonoBehaviour
          }
 
     }
-
 }
