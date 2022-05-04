@@ -50,7 +50,6 @@ public class Enemies : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Speed: " + speed);
         if (other.tag == "player")
         {
             player_char karateka = other.GetComponent<player_char>();
